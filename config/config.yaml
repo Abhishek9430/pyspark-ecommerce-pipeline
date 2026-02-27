@@ -1,0 +1,13 @@
+app:
+  name: ecommerce-pipeline
+
+paths:
+  raw: data/raw
+  bronze: data/bronze
+  silver: data/silver
+  gold: data/gold
+
+spark:
+  app_name: ecommerce-batch-job
+  shuffle_partitions: 200
+  braodcast_timeout: 300
