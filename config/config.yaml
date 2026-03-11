@@ -10,4 +10,5 @@ paths:
 spark:
   app_name: ecommerce-batch-job
   shuffle_partitions: 200
-  braodcast_timeout: 300
+  broadcast_timeout: 300
+  adaptive_execution_enabled: true

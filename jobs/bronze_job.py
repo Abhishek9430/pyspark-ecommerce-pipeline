@@ -1,2 +1,2 @@
-def run_bronze_job(spark,config,process_date):
+def run(spark, config, process_date):
     pass
