@@ -1,6 +1,7 @@
 """Orchestrator entry point. Parses CLI, loads config, initializes Spark, dispatches to job."""
 
 import argparse
+import logging
 from pathlib import Path
 
 import yaml
@@ -16,6 +17,11 @@ def load_config(config_path: str) -> dict:
 
 
 def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    )
+
     parser = argparse.ArgumentParser(description="E-commerce PySpark pipeline")
     parser.add_argument("--layer", required=True, choices=["bronze", "silver", "gold"])
     parser.add_argument("--date", required=True, help="Process date (e.g. 2026-01-01)")
